@@ -4,9 +4,9 @@ Created on Fri Mar 13 16:03:24 2026
 
 @author: nacho
 """
-#from funciones_habitos import registrar_habitos, analizar_habitos
-#from funciones_habitos import analizar_habitos
-import funciones_habitos
+from funciones_habitos import registrar_habitos, analizar_habitos
+
+
 
 
 lista = registrar_habitos()
