@@ -1,18 +1,39 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Fri Mar 13 16:03:24 2026
+peliculas = {}
 
-@author: nacho
-"""
-from funciones_habitos import registrar_habitos, analizar_habitos
+nombre = input( ' Introduce un nombre o salir para terminar: ')
 
+while nombre != 'salir':
+    pelicula = input('Introduce la pelicula: ')
+    puntaje = float (input(' Introduce el puntaje de la pelicula: '))
+    
+    if pelicula not in peliculas:
+        peliculas[pelicula] = []
+    
+    peliculas[pelicula].append(puntaje)
+    nombre = input( ' Introduce un nombre o salir para terminar: ')
+    
+mejor_n =''
+mejor_p = -1
 
-
-
-lista = registrar_habitos()
-
-resultado = analizar_habitos(lista)
-
-print (' resumen de actividades')
-print(resultado)
-
+for pelicula  in peliculas:
+    suma = 0
+    for  p in peliculas[pelicula]:
+        suma += p
+    promedio = suma / len(peliculas[pelicula])
+    print (pelicula, 'el promedio es', promedio)
+    
+    if promedio > mejor_p:
+        mejor_p = promedio
+        mejor_n = pelicula
+        print(pelicula, 'es la pelicula recomendada')
+        print('promedio', mejor_p)
+    
+    
+    
+    
+        
+        
+    
+        
+    
+    
